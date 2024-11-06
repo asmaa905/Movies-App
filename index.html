@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <link rel="icon" href="./images/logo2.png">
+  <title>Movie App</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/all.min.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/bootstrap.min.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+</head>
+
+<body class="">
+  <aside class="side-menu h-100 position-fixed top-0 d-flex">
+    <div class="nav  h-100 flex-column justify-content-between p-4">
+      <ul class="nav-menu">
+        <li class="nav-item  position-relative cursor-pointer" style="top: 300px;"><a class="text-white nav-link"
+            to="now_playing" href="#">Now playing</a>
+        </li>
+        <li class="nav-item  position-relative cursor-pointer" style="top: 300px;"><a class="text-white nav-link"
+            to="popular" href="#">Popular</a></li>
+        <li class="nav-item  position-relative cursor-pointer" style="top: 300px;"><a class="text-white nav-link"
+            to="top_rated" href="#">Top Rated</a>
+        </li>
+        <li class="nav-item  position-relative cursor-pointer" style="top: 300px;"><a class="text-white nav-link"
+            to="trending" href="#">Trending</a></li>
+        <li class="nav-item  position-relative cursor-pointer" style="top: 300px;"><a class="text-white nav-link"
+            to="upcoming" href="#">Upcomping</a></li>
+
+        <li class="nav-item  position-relative cursor-pointer" style="top: 300px;"><a class="text-white nav-link"
+            to="contactUs" href="#contactUs">Contact
+            Us</a></li>
+      </ul>
+      <div class="footer">
+        <div class="social">
+          <ul class="d-flex justify-content-start align-items-center  text-left">
+            <li style="padding-left: 15px;"><a class="" href="facebook.com"><i class="fab fa-facebook"></i></a></li>
+            <li style="padding-left: 15px;"><a class="" href="twitter.com"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li style="padding-left: 15px;"><a class="" href="#"><i class="fa fa-globe"></i></a></li>
+
+          </ul>
+        </div>
+        <p class="copyright pt-3">Copyright Â© 2019 All Rights <br>Reserved.
+          <br>
+          Created by <a class="text-danger fw-bold" href="https://github.com/asmaa905">Asmaa Abdelnaser</a>
+        </p>
+
+      </div>
+
+    </div>
+    <div class="bars-cont  h-100 d-flex flex-column justify-content-between align-items-center  py-4 text-center px-2">
+      <div class="logo ">
+        <img class="w-100 h-100 d-block" src="./images/logo.png" alt="">
+      </div>
+      <div id="barsBtn" class="bars-icon">
+        <i class="fa-solid fa-align-justify"></i>
+      </div>
+      <ul class="footer-icons">
+        <li><i class="fa fa-globe"></i></li>
+        <li><i class="fa fa-share-alt"></i></li>
+
+      </ul>
+    </div>
+  </aside>
+
+  <div class="main position-relative h-100 ms-auto w-100" style="height: 100vh !important;">
+    <div class="container position-relative">
+      <div class="row  py-5 g-4 ">
+        <!-- start now playing -->
+        <div id="mainSection" class="main-section">
+          <div id="searchDivs" class="container">
+            <div class="row g-4">
+              <div class="col-md-6 mx-auto px-3">
+                <input id="searchName" type="text"
+                  class="form-control mt-4 bg-transparent text-white rounded-pill shadow-none px-3"
+                  placeholder="Search">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row g-4 mt-3" id="mainRow">
+
+            </div>
+          </div>
+        </div>
+        <!-- end now playing -->
+        <!-- start contact us -->
+        <div id="contactUs" class="contact-us">
+          <div class="container">
+
+            <form action="" class="contact-form">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2 class="text-white">Contact Us</h2>
+                </div>
+                <div class="col-md-6">
+                  <!-- add in alert border-danger -->
+                  <input class="form-control mt-4" type="text" name="name" id="nameInput" placeholder="Enter Your Name"
+                    required>
+                  <span id="nameAlert" class="error  text-danger w-100 d-none ">
+                    Special characters and numbers not allowed
+                  </span>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control mt-4" type="email" name="email" id="emailInput"
+                    placeholder="Enter Your Email" required>
+                  <span id="mailAlert" class="error   text-danger w-100 d-none">
+                    Email not valid *exemple@yyy.zzz
+                  </span>
+                </div>
+
+                <div class="col-md-6">
+                  <input class="form-control mt-4" type="tel" name="phone" id="phoneInput"
+                    placeholder="Enter Your Phone">
+                  <span id="phoneAlert" class="error   text-danger w-100  d-none">
+                    Please enter 11 numbers at least
+                  </span>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control mt-4" type="number" name="age" id="ageInput" placeholder="Enter Your Age">
+                  <span id="ageAlert" class="error   text-danger w-100  d-none">
+                    Please enter a valid age
+                  </span>
+                </div>
+
+                <div class="col-md-6 password-inp">
+                  <input class="form-control mt-4" type="password" name="password" id="passwordInput" required
+                    placeholder="Enter Your Password">
+                  <span class="eye">
+                    <i data-show="show" class="text-white fa fa-eye-slash"></i>
+                  </span>
+                  <span id="passwordAlert" class="error   text-danger w-100 d-none">
+                    Enter valid password *Minimum eight characters, at least one letter and one number: exa:
+                    gr3at@3wdsG
+                  </span>
+                </div>
+                <div class="col-md-6">
+                  <input class="form-control mt-4" type="password" name="repassword" id="repasswordInput"
+                    placeholder="Enter Your Repassword">
+
+                  <span id="repasswordAlert" class="error   text-danger w-100 d-none">
+                    Enter valid password
+                  </span>
+                </div>
+              </div>
+              <div class="col-md-12 mt-4">
+                <button id="submitBtn" class="btn rounded-2 mb-3 ">Submit</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <!-- end contatc us -->
+      </div>
+      <!-- start floating btn -->
+      <div id="upBtn"
+        class="up-btn position-fixed text-center d-flex flex-column justify-content-center align-items-center">
+        <a href="#">
+          <i class="fa-solid fa-arrow-up-long"></i>
+        </a>
+      </div>
+      <!-- start floating btn -->
+    </div>
+
+    <div class="loading bg-overlay position-absolute hv-100">
+      <span class="loader"></span>
+    </div>
+  </div>
+  <!--  -->
+  <script src='js/bootstrap.bundle.min.js'></script>
+  <script src='js/jquery-3.7.1.min.js'></script>
+  <script src='js/main.js'></script>
+</body>
+
+</html>
