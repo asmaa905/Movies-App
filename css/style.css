@@ -306,7 +306,7 @@ input#searchName {
 
 /* end contact us */
 /* start media query */
-@media (min-width: 600px) and (max-width: 767px) {
+@media (max-width: 767px) {
   #searchName {
     width: 75% !important;
     margin: auto;
