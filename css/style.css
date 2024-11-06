@@ -1,11 +1,9 @@
 /* start global vars */
 /* start global rulez */
 :root {
-  /* --secondary-text-color :rgb(191, 193, 200)  ; */
   --global-text-color: #0d0d0d;
   --text-color-main: #f9f6f6;
   --bg-color-main: rgb(13, 13, 13);
-  /* --main-color : rgb(39,43,48) */
 }
 *,
 *::before,
@@ -50,11 +48,8 @@ button:focus:not(:focus-visible) {
   color: rgb(249, 246, 246);
   font-weight: 500;
 }
-.text-meal-cats {
-  font-size: 28px;
-  line-height: 34px;
-  color: rgb(249, 246, 246);
-  font-weight: 700;
+.text-light-blue {
+  color: rgb(51, 86, 147) !important;
 }
 /* end global vars */
 /* start aside */
@@ -182,6 +177,10 @@ button:focus:not(:focus-visible) {
 }
 input#searchName {
   border: 2px solid #f8f6f6;
+}
+#searchDivs .search-close {
+  top: 56%;
+  right: 30px;
 }
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);

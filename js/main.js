@@ -6,6 +6,7 @@ $(document).ready(function(){
   let trendingApi ='https://api.themoviedb.org/3/trending/movie';
   let rowData = $('#mainRow');
   let searchInput = $('#searchName');
+  let searchCloseIcon = $('#searchIcon')
   const submitBtn =$("#submitBtn");
   const upBtn = $('#upBtn');
   const Loading = $(".loading");
@@ -108,9 +109,10 @@ $(document).ready(function(){
   async function getMovies(filterBy, search=false,search_word = null) {
     rowData.html("")
     searchInput.html("");
+    // Loading.fadeIn(2000)
+
     try{
       if(search) {
-        Loading.fadeIn(2000)
       excutSearchApiData(search_link, search_word).then((data) => {
         displayData(data.results)
         Loading.fadeOut(300)
@@ -337,9 +339,21 @@ $(document).ready(function(){
     getMovies(null,true,e.target.value);
     if(e.target.value == "")
     {
-        getMovie("now_playing", false, null);
+      getMovies('now_playing', false, null)
+        searchCloseIcon.removeClass('d-block');
+        searchCloseIcon.addClass('d-none');
+    } else {
+      searchCloseIcon.addClass('d-block');
+      searchCloseIcon.removeClass('d-none');
+
     }
   });
+  searchCloseIcon.click(function(){
+    searchInput.val('');
+    getMovies('now_playing', false, null);
+    searchCloseIcon.addClass('d-none');
+    searchCloseIcon.removeClass('d-block');
+  })
   /** start cardimage animate on hover */
    function CardImageOnHoverIn()
     {
