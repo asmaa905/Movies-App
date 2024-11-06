@@ -368,9 +368,7 @@ $(document).ready(function(){
   /** end cardimage animate on hover */
   /** show and hide password */
  // Show the eye icon if there's any input in the password field
-   if (passwordInput.val() !== '') {
-      passIcon.removeClass('d-none').addClass('d-block');
-    }
+
 
     // Toggle show/hide password on icon click
     passIcon.click(function() {
@@ -434,6 +432,7 @@ function inputsValidation() {
      }
  }
  if (insidePasswordInput) {
+     togglePassIcon();
      if (passwordValidation()) {
        passwordAlert.removeClass("d-block")
        passwordAlert.addClass("d-none")
@@ -476,7 +475,13 @@ function inputsValidation() {
     });
   }
 }
-
+function togglePassIcon(){
+  if (passwordInput.val() !== '') {
+      $('span.eye').removeClass('d-none').addClass('d-block');
+    }else {
+      $('span.eye').removeClass('d-block').addClass('d-none');
+    }
+}
     /**start validate event listener */
     nameInput.on("keyup",  inputsValidation);
     ageInput.on("keyup", inputsValidation);
@@ -536,7 +541,7 @@ function repasswordValidation() {
   /** end validations */
   /* excute self invoking functions */
   getMovies('now_playing', false, null);
-  
+  togglePassIcon();
   })
   
 
