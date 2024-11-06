@@ -101,7 +101,7 @@
                   <!-- add in alert border-danger -->
                   <input class="form-control mt-4" type="text" name="name" id="nameInput" placeholder="Enter Your Name"
                     required>
-                  <span id="nameAlert" class="error  text-danger w-100 d-none ">
+                  <span id="nameAlert" class="error   text-danger w-100 d-none ">
                     Special characters and numbers not allowed
                   </span>
                 </div>
@@ -128,12 +128,16 @@
                 </div>
 
                 <div class="col-md-6 password-inp">
-                  <input class="form-control mt-4" type="password" name="password" id="passwordInput" required
-                    placeholder="Enter Your Password">
-                  <span class="eye">
-                    <i data-show="show" class="text-white fa fa-eye-slash"></i>
-                  </span>
-                  <span id="passwordAlert" class="error   text-danger w-100 d-none">
+                  <div class="pass-input-icon position-relative">
+                    <input class="form-control mt-4" type="password" name="password" id="passwordInput" required
+                      placeholder="Enter Your Password">
+                    <span class="eye position-absolute">
+                      <i id="showPass" class="text-white fa fa-eye-slash"></i>
+                    </span>
+
+                  </div>
+
+                  <span id="passwordAlert" class="error    text-danger w-100 d-none">
                     Enter valid password *Minimum eight characters, at least one letter and one number: exa:
                     gr3at@3wdsG
                   </span>

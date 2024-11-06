@@ -24,7 +24,7 @@ $(document).ready(function(){
   const phoneInput = $("#phoneInput");
   const passwordInput = $("#passwordInput");
   const repasswordInput = $("#repasswordInput");
-
+  const passIcon = $("#showPass");
   let movieImg,
   movieDes,
   movieRealase,
@@ -144,7 +144,7 @@ $(document).ready(function(){
                     <div class="image" style="width:100%;height:100%">
                       <img class="w-100 h-100" src="${imgPath}/${movieImg}" alt="">
                     </div>
-                    <div class="overlay overflow-hidden animate-mov text-white">
+                    <div class="overlay overflow-hidden  text-white">
                       <h1 class="title text-center animate__animated">${data[i][movieName]}</h1>
                       <p class="desc animate__animated">${movieDes}</p>
                       <p class="date animate__animated"><span class="fst-normal">Release Date<span>
@@ -363,10 +363,27 @@ $(document).ready(function(){
   function CardImageOnHoverOut()
   {
     $(this).find($('.overlay')).css({"opacity":"0","visibility":"hidden"});
-
     $(this).find($('.image img')).removeClass("animate");
 }
   /** end cardimage animate on hover */
+  /** show and hide password */
+ // Show the eye icon if there's any input in the password field
+   if (passwordInput.val() !== '') {
+      passIcon.removeClass('d-none').addClass('d-block');
+    }
+
+    // Toggle show/hide password on icon click
+    passIcon.click(function() {
+      if (passwordInput.attr('type') === 'password') {
+        // Change input type to text and icon to eye
+        passwordInput.attr('type', 'text');
+        passIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+      } else {
+        // Change input type back to password and icon to eye-slash
+        passwordInput.attr('type', 'password');
+        passIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+      }
+    });
   /** end event listener */
   /** start validations */
 let insideNameInput = false;
